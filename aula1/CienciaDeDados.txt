@@ -1,0 +1,3 @@
+CIÊNCIA DE DADOS:
+	- machine learning é usado em ciência de dados
+Compreenssão de negócio, obtençãod e dados, limpeza de dados, analise exploratória, feature engeenering, treinamento, validação, data science ops

@@ -1,0 +1,9 @@
+import pandas as pd
+
+# abrir um arquivo
+df = pd.read_csv('sample_data/california_housing_train.csv')
+df = df.dropna() # removendo pessoas que não tem numero, not a number
+df # mostra o arquivo
+
+Argoritimo supervisionado: é o dado que eu quero ver
+nn supervisionado: nn sei o que quero, "me de informação"

@@ -1,0 +1,124 @@
+====== MACHINE LEARNING =========================================================
+
+Machine Learning, ou Aprendizado de Máquina, são algoritmos que usam estatística e outros conceitos
+matemáticos para fazer com que seja possível aprender os padrões e retirar informações de dados fornecidos
+
+Salvar o modelo para não precisar treinar de novo;
+pag 47;
+
+====== REGRESSÃO #
+
+REGRESSÃO = PREVER VALORES. EX: QUANTO ESSA CASA VAI VALER?
+
+MIN_SAMPLES : É o número mínimo de amostras que deve existir em cada folha
+
+FEATURE : É UMA COLUNA
+
+====== TIPOS DE PROBLEMAS ========================================================
+
+	- OVERFITING: o modelo "aprende demais" a respeito dos dados
+	aprendendo seus ruídos e especificidades que podem ser característicos apenas dos dados de
+	treinamento mas não dos de testes. Isso não parece ruim mas na verdade é, isso significa que
+	o modelo será incapaz de lidar com novos e diferentes dados do problema.
+
+	### overfiting se mede vendo a precisão dos dados de treino e de teste ###
+
+	RESOLVER : AUMENTA O DEPTH E AUMENTA O MINSAMPLES(AUMENTAR PARÂMETROS)
+
+	- UNDERFITING: O algoritmo tem resultados ruins, ou seja, baixa precisão, vai mal tanto nos
+	dados de teste quanto nos dados de treino.
+
+
+====== CLASSES/CLASSIFICAÇÃO APRENDIZADO NN SUPERVISIONADO ======================
+
+    - Clusterização/Agrupamento: Não conhecemos as classes mas queremos agregá-los, por isso
+	separamos os dados em grupos/conjuntos. Por exemplo, temos dados de consumidores de um
+	mercado. Não conhecemos os tipos de consumidores mas podemos tentar agrupá-los e descobrir que existem perfis de usuários que se comportam de forma igual.
+	- CLASSE É CADA UM DOS CASOS. EX: CLASSA DOENÇA A, CLASSE DOENÇA B E CLASSE SADIO
+
+====== TREINAMENTO E VALIDAÇÃO =================================================
+
+1 - Separamos os dados em teste e treino;
+2 - Treinamos o modelo sobre os dados de teste;
+3 - Calculámos métricas de desempenho para avaliarmos se o modelo está bom ou o que
+precisamos mudar nele.
+
+====== DECISION TREE ==========================================================
+
+====== ÍNDICE DE GINI #
+
+- ALGORÍTIMO: PERCEBE A MELHOR FORMA DE DIVIDIR OS DADOS PARA MONTAR A ÁRVORE =>
+	ELE VÊ TODAS AS DIVISÕES POSSÍVEIS DEPOIS COMPARA QUAL DEU O INDICE DE GINE MAIS PERTO OU DE 1 OU DE 0
+	EXEMPLO: DE DÁ 40% SIGNIFICA QUE 4O% FAZ A E OS OUTROS 60% FAZ B, NÃO ESTA MUITO PRECISO, AGORA SE 90% FAZ A E SÓ 10% FAZ B É MAIS PRECISO, 90% É BEM MAIS
+
+- SEPARA OS GRUPOS MAIS OMOGÊNEOS
+
+- SE O INDICE DE GINI FOR ALTO NÃO É BOM DIVIDIR OS DADOS ALÍ
+
+===== GANHANDO PRECISÃO
+
+- Depth infinito e minsamples é 1, ele vai achar todas as possibilidades do minsamples. Porém, quanto mais específico fica mais overfiting(ruído);
+
+-- valor mínimo d euma função é tirar a derivada(é o angulo da reta) e iogualar a zero
+
+======================================= Resolvendo Regressão e Classificação =======================================
+
+vetor : pq é uma lista;
+
+vetorX(linha que está) * vetorPeso(valor aleatório) + b(valor aleatório)
+
+# Beta e peso variam #
+
+=== Como ajustar esses valores : definir uma função erro(w, b); (vetorX(linha onde está) + vetorPeso + b - posiçãodacolunaquequerdescobrir)² ==> minimizar o erro é o 	objetivo, isso é treinar o algoritimo; depoise dessa equeção vcc soma todos os resultados que isso deu para cada item; b e w são números aleatórios; quanto mais perto 	da realidade mais bem treinada sua IA está; ==> objetivo centrral, achar os valores de omega e beta poara qual o erro é mínimo;
+
+## Equação para prever o valor: erro: x(linha dos dados) * w(peso)  b(beta)
+
+para achar beta precisa dos valores que deixem a equação a seguir igual a zero:
+
+derivada do erro:
+de/db = 2 * somaDeTodosOsResultadosNoParenteses(vetorX + vetorW + b - y) = 0
+=> somatória vetorX + w + somatóriaB - somatóriaX = 0;
+x * w + nb - y = 0
+b = (y - xw) /n
+w = xy - somatóriaY * todosOsDadosComoMatrizX / x² - somatóriaX * todosOsDadosComoMatrizX
+
+====== Lasso regression #
+
+====== STOCHASTIC GARDIENT DESCENT #
+
+
+== GRADIENT DESCENDENT
+
+- Derivada é negativa quando está caindo, o contrário é verdadeiro
+- sua posiçõa atual x é modificada assim: x = x - (alfa * defivada) // o x vai aumnetra pois vc está subtraindo uma valor negativo
+diminui a distancia do x até o valor mínimo
+- alfa é o parâmetro de aprendizagem, quanto mais baixo mais demora ele andar(vai devagar nos "passos")
+- se o alfa for grand eel pode estourar
+
+== STOCHASTIC GRADIENT DESCENDENT
+
+Olha de poquinho em poquinho os dados para achar o ponto mínimo, vai mais rápido que o gradient descendent pois este olha todos; 
+Ele é vcai corretamente porém vai mais rápido; Sempre pegar x dados diferentes para analisar;
+-- quanto maior o alfa menos passos precisando e mais rápido é
+-- se o alfa for muito grande o algorítimo fica instável e nunca chega, se seu algoritmo está muito lento o alfa deve ser maior
+-- rodar e pararf rápido para ver como está indo o progresso do algoritmo com o alfa atual
+
+O beta muda assim : b = b - alfa * 2 * soamtória(x * w + b - y)
+=> se for o stochast ele não vai fazer em todos os dados, mas sim num pedaço
+
+== problema do mínimo: rodar varias vezes para achar o ponto mínimo certo, se rodar muitas evzes e não houver nenhum outro valor menor encontrado como valor mínimo
+você achou o correto
+
+alfa = 0,1 ==> palpite idal
+
+w = w - alfa * 2 * somatória(y * w + b - y)x;
+
+
+
+
+
+
+
+
+
+
