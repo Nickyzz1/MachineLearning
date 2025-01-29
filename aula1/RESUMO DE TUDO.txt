@@ -113,6 +113,8 @@ alfa = 0,1 ==> palpite idal
 
 w = w - alfa * 2 * somatória(y * w + b - y)x;
 
+=======================
+
 
 
 
