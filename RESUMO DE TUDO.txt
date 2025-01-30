@@ -14,6 +14,45 @@ MIN_SAMPLES : É o número mínimo de amostras que deve existir em cada folha
 
 FEATURE : É UMA COLUNA
 
+== é o mesmo peso para todos os elementos de uma coluna, pA para coluna A, pB para coluna B, etc..
+
+== regulador evita que o W exploda
+
+== formuka do w SGD
+
+	wk -= alfa + de/dwx
+
+== PRINCIPIOS DA IA ==
+
+- Formula do erro:
+
+	E(w, b) = somatória (vetorxi * vetorW + b - y)² + [regulador : parametro passsado [w] -> módulo de w ]
+
+		4 - 16
+		4 - 16
+		5 - 25
+		erro global = 16 + 16 + 25 = 57
+
+-  OBJETIVO: Achar o w e o beta para que o erro seja mínimo;
+
+
+	derivadaE/derivadaWk = 2 * Somatória(vetorX * vetorW + beta - y) * XiK  => descobrir a derivada do erro, se encontrar onde a derivada é
+	zero vc acha o ponto mínimo do erro;
+	k = coluna;
+	XiK = é o a matriz da coluna e linha onde o peso que se leva em consideração é usado, o vetor x é uma lista
+
+	com regulador:
+
+	- DerivadaE/derivadaWk = 2 * Somatória(vetorXi * vetorW + beta - y) * XiK + [isso é um regulador:]2pWk ===> subtrair a derivada te leva pro ponto zero pois a 	derivada vai ser negativa e ele vai andar um pouquinho par baixo
+
+	vetorY = 2 * Somatória(vetorXi0 * W0 + xi1 * W1 + xi2 * w2 + Beta)
+
+
+=== separar ados em y de treino e x de treino; y de teste e x de teste
+
+=== atv para printar : quando terminar uam época vc vai printar o calculo do erro de treinoe  o erro de teste e o numero da épocA = Digamos que vc tem 300 dados
+quando vc rodar vai ler do 0 ao 100 e treinar, depois do 101 a 200, depois do 201 ao 300, ai acabou uamépoca, depois vcc faz td de novo para diminuir o erro 
+
 ====== TIPOS DE PROBLEMAS ========================================================
 
 	- OVERFITING: o modelo "aprende demais" a respeito dos dados
@@ -116,11 +155,20 @@ w = w - alfa * 2 * somatória(y * w + b - y)x;
 =======================
 
 
+== ELASTIC NET
 
 
+Erro (ou Função de Custo): O cálculo do erro em problemas de aprendizado de máquina é uma medida de quão bem o modelo está fazendo previsões em relação aos resultados reais. Quanto menor o erro, melhor o modelo.
+
+Derivada do Erro (Gradiente): O gradiente (ou derivada) do erro com relação aos pesos é utilizado para entender como o erro muda quando você ajusta os pesos. Ele indica a direção e a magnitude da mudança necessária para minimizar o erro.
+
+Gradiente Descendente: Esse é o processo de otimização mais comum. O gradiente nos diz como atualizar os pesos (seja para aumentar ou diminuir) para reduzir o erro. A ideia é mover-se na direção oposta ao gradiente para minimizar o erro.
 
 
+O valor de -24975.595346540213 indica a taxa de variação negativa do erro em relação ao peso que você modificou (no índice que você escolheu).
+Como é negativo, isso significa que, se você aumentar o peso específico, o erro diminui. Em termos de gradiente descendente, isso indica que você deve aumentar o valor do peso para reduzir o erro.
 
+O valor negativo de -24975.595346540213 sugere que, para melhorar o modelo (ou seja, reduzir o erro), você deve aumentar o peso em questão.
 
 
 
