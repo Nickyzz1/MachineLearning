@@ -21,3 +21,18 @@ ensemble --> modelos de machine learnign mais fortes pode ser regressão e class
 
 underfiting -> muda o modelo --> se o desempenho de teste e detreino são baixos
 overfiting  -> muda os parâmetros --> se o desempenho de teste é bom mas de treino é ruim
+
+=============== PASSOS ==================
+
+- LER modelo
+- RETIRAR COLUNAS inuteis e separar colunas resultado
+
+- jutar colunas que façam sentido
+- separar dados em treino e teste
+
+- fazer o alfort=ito model com grid e o algot=ritmo decidido
+- treiuanr modelo
+- salvar modelo
+
+- caslcular erro absolto médio
+- mostrar gráficos
