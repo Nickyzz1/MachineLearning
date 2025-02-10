@@ -170,5 +170,35 @@ Como é negativo, isso significa que, se você aumentar o peso específico, o er
 
 O valor negativo de -24975.595346540213 sugere que, para melhorar o modelo (ou seja, reduzir o erro), você deve aumentar o peso em questão.
 
+=======================
+
+tp : era positivo e acertou
+fp : era negativo e ele falou que era positivo
+
+accutacy ==> para medir quanto acertou : ((tp + tn) / (tp + tn + fp + fn))
 
 
+precision : quantas pesssoas que a ia façlou que tinha cancer que realemnte tinham cancer (tp / (tp + fp))
+
+recall :  das pessoas que eu falei que tinham cancer, quantas realmente inham (das pessoa s que vc tem realmente certeza mesmo ) ==> quando a precisao cai o recall sobre, o recall é a certeza, mas ele pode pegar mais coisas além do 100%, tipo o 80%. (tp / (tp + fn))
+
+sera que eu consigo digitar sem olhar o teclado sem olhar?
+talvez eu consiga, eu preciso escrever um texto inteiro sem olhar o teclado
+agora, para decorar as teclas do piano, eu tenho que tentar acertar a nota sem olhar, posso usar um app para saber qual nota estou tocando!
+
+mean_squared_error : QUANDO VC NN PODE ERRAR MTT
+
+=============
+
+se ele escoloheu o menor possivel dos valores que vc coloucou tlvz haja um valor menor ainda que seja melhor
+se ele escolheu o maior dos valoreses possíveis quer dizer que tlvz haja um valor maior que seja melhor ainda
+
+=============
+
+https://scikit-learn.org/stable/ 
+tem todos os modelos
+kaggle ==> pegar datasets
+
+deciosion tree nregression
+elastic NET
+svm

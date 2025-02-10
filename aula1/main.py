@@ -56,7 +56,7 @@ df.boxplot(column = ['latitude'])
 df.plot.scatter(x = 'latitude', y = 'longitude', s = 1)
 
 # ==============  #
-
+ 
 
 # =============================== ANOTAÇÕES
 

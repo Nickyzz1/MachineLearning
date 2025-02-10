@@ -1,0 +1,23 @@
+neatest neighbors - modelo de classificação
+
+claassificação - classificar algo om poucas opçoes. ex: cancer, saudável, pressão alta
+regressão - prever alguma coisa. Ex: valor de uma casa, bikes emprestadas
+
+- vc olha o vizinho mais próximo
+- algoritmo pesado e lento
+- simples e usado quando nn tem muitos dados
+
+(quando os tradicionauis não funcionam)
+ensemble --> modelos de machine learnign mais fortes pode ser regressão e classificação
+
+#### prever coisa usado vários modelos diferentes e junta em um só.
+
+- bagging --> junta vários algoritmos pra decidirem juntois (mais rápido de treinar pois vc pode paralelizar em várias threds cada modelo)
+	- voating --> modelos votam, ex: 3 resuktaram em saudavel e 2 em câncer. O saudável ganha;
+	- random forest --> um voating apenas com decision trhree, tds treinados com partes aleatórios dos dados(melhor para classificar que pra regression)
+
+- boasting --> m1->m2->m3 : po que o modelo 1 estiver errando eu passo pro modelo 2 e o modelo 2 passo pro modelo 3s : pegra a saída de tds os modelos e somar dá uma saída mtt parecida com a que vc precisa
+- ada boost -->
+
+underfiting -> muda o modelo --> se o desempenho de teste e detreino são baixos
+overfiting  -> muda os parâmetros --> se o desempenho de teste é bom mas de treino é ruim
