@@ -36,3 +36,12 @@ overfiting  -> muda os parâmetros --> se o desempenho de teste é bom mas de tr
 
 - caslcular erro absolto médio
 - mostrar gráficos
+
+=============== redes neuraos ==================
+
+numero de entradas Mais o bias ==> pesos de cada neuronio depois e soma os pesos dos neuronios
+-- deriva ao erro e acha a derivada para cdada um dos milhares de erros
+- alfa perto de um  deixa o algoritmo mais rápido
+
+-- backpropagation : algoritmo que permitiu que as redes neurais fossem treinadas
+
