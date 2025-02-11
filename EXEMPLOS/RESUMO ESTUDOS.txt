@@ -1,0 +1,23 @@
+CLASSIFICAÇÃO(CLASSIFICAR VALORES) VS REGRESSÃO(PREVER VALORES)
+
+SE CLASSIFICAÇÃO ENTRE 1, 2 E 3 O MODELO DIZ QUE FOI 2 MAS O CORRETO ERA 3, ENTÃO O MODELO ERROU 100%
+SE REGRESSÃO ENTRE NIVESI 1, 2 E 3 E O MODELO DIZ QUE FOI 2 MAS O CORRETO É 3 ELE ESTAVA PERTO DO RESULTADO CORRETO 
+
+
+1. Classificação
+Algoritmos comuns:
+
+Árvore de Decisão (Decision Tree)
+Máquina de Vetores de Suporte (SVM)
+Random Forest
+K-Nearest Neighbors (KNN)
+Redes Neurais Artificiais (MLP - Multi-layer Perceptron)
+
+2. Regressão
+Algoritmos comuns:
+
+Regressão Linear
+Regressão Ridge
+Regressão Lasso
+Elastic Net
+Árvore de Decisão para Regressão (Decision Tree Regressor)
