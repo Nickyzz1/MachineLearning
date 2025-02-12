@@ -1,0 +1,21 @@
+O Perceptron é um dos primeiros modelos de aprendizado de máquina, criado por Frank Rosenblatt nos anos 1950. Ele é um modelo de classificação binária que aprende ajustando pesos com base em exemplos de treino.
+
+Como funciona?
+Ele funciona como um neurônio artificial, recebendo entradas 𝑋 =(𝑥1,𝑥2,...,𝑥𝑛)
+X=(x 1​,x 2​,...,x n), multiplicando por pesos 
+𝑊=(𝑤1,𝑤2,...,𝑤𝑛)
+W=(w 1,w 2​,...,w n) e passando por uma função de ativação:
+
+𝑦=sign(𝑊⋅𝑋+𝑏)
+y=sign(W⋅X+b)
+Se o resultado for positivo, pertence à classe 1.
+Se for negativo, pertence à classe -1.
+
+FUNÇÃOD E ATIVAÇÃO ==> ACABAR COM A LINEARIDADE(SE FOR LINEAR NN DÁ PARA REPRESENTAR COISAS COMPLEXAS) DO ALGORITMO E ATIVAR O NEURÔNIO
+
+PESSOS MULTIPLICÃO A SAÍDA DA CAMADA ANTERIOR
+QUANTOS PARAMETROS TEM CAMADA => N OUTPUTS DA CAMADA ANTERIOR BIAS ATUAL MULTIPLICADO PELOS NEURONIOS 
+COMO TREINO A REDE NEURAL => DERIVA A FUNÇÃO DE ERRO E APLICA O SGD
+QUEM DECIDE QUANTAS CAMADAS: VC
+DIMINUIR O OVERFITTING : DROPPOUT E EARLYSTOP
+DIMINUIR O UNDERFITING : AUMENTAR NEURONIOS E CAMADAS
