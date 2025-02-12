@@ -21,3 +21,70 @@ Regressão Ridge
 Regressão Lasso
 Elastic Net
 Árvore de Decisão para Regressão (Decision Tree Regressor)
+
+
+Aprendizado Supervisionado 📊
+✅ Os dados possuem rótulos (labels) fornecidos na entrada.
+✅ O modelo aprende mapeando entrada → saída, com base em exemplos.
+✅ Usado para classificação e regressão.
+
+🔹 Exemplos de Algoritmos Supervisionados:
+
+Classificação:
+
+Decision Tree (Árvore de Decisão)
+Random Forest
+Support Vector Machine (SVM)
+Regressão Logística
+Naive Bayes
+K-Nearest Neighbors (KNN)
+Regressão:
+
+Regressão Linear
+Regressão Polinomial
+Elastic Net
+📌 Exemplo prático:
+Um modelo para prever se um e-mail é spam ou não (entrada: e-mail; saída: spam ou não).
+
+
+Aprendizado Não Supervisionado 🔍
+✅ Os dados não possuem rótulos, apenas características.
+✅ O modelo encontra padrões e agrupamentos nos dados.
+✅ Usado para agrupamento (clustering) e redução de dimensionalidade.
+
+🔹 Exemplos de Algoritmos Não Supervisionados:
+
+Clustering (Agrupamento)
+
+K-Means
+DBSCAN
+Hierarchical Clustering
+Redução de Dimensionalidade
+
+PCA (Análise de Componentes Principais)
+t-SNE
+Autoencoders
+📌 Exemplo prático:
+Um modelo para agrupar clientes com base no comportamento de compra, sem saber previamente a qual grupo pertencem.
+
+⚖️ Diferença Principal
+Supervisionado                	    | Não Supervisionado
+Dados de Treino	Possuem rótulos	    | Não possuem rótulos
+Objetivo	Prever ou classificar	| Encontrar padrões ocultos
+Exemplo	Detectar fraudes bancárias	| Agrupar clientes com perfis similares
+Tipo de Saída	Determinística (rótulo ou valor) |	Grupos ou representação reduzida dos dados
+
+
+========= Regressão Linear ===============
+A regressão linear representa a relação entre as variáveis numéricas, usada para quantificar e fazer previsões baseadas no relacionamento entre variáveis. A relação de linearidade significa que quando uma (ou mais de uma no caso da regressão linear múltipla) variável independente aumenta ou diminui, a variável dependente aumenta ou diminui também.
+
+====================== COMO SE FOSSE DIRETAMENTE PROPORCONAL OU INVERSAMENTE PROPORCIONAL =====================
+
+ A regressão linear é uma técnica supervisionada que faz previsões de valores de dados contínuos. Por ser supervisionado, cada ver que treinarmos o modelo, ele estará capturando padrões que depois serão usados para prever valores de novos dados. O objetivo da regressão linear é descobrir como certas variáveis são relacionadas, como uma influencia a outra. Existem basicamente dois tipos:
+
+ Regressão Linear Simples: examina a relação linear entre duas variáveis. Tem um preditor e uma predição. Ou seja, uma variável independente e uma variável dependente (target).
+Regressão Linar Múltipla: examina a relação linar entre mais de duas variáveis. Tem múltiplos preditores e uma predição. Ou seja, várias variáveis independentes e uma variável dependente (target)
+
+variável independente = features independentes, inputs, regressores ou variáveis preditoras. Usadas para prever o resultado. (x)
+variável dependente = features dependentes, target, alvo, outputs ou responses. É a que queremos descobrir. (y)
+resíduos = são os erros de predição, representam a diferença entre a previsão e o que realmente aconteceu.
