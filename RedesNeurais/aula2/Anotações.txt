@@ -1,0 +1,153 @@
+import OS funções:
+
+os.listdir(path): Retorna uma lista de todos os arquivos e diretórios no caminho especificado.
+os.mkdir(path): Cria um diretório (pasta) no caminho especificado.
+os.makedirs(path): Cria diretórios, incluindo diretórios intermediários, se necessário.
+os.remove(path): Remove um arquivo.
+os.rmdir(path): Remove um diretório vazio.
+os.rename(old_name, new_name): Renomeia ou move um arquivo ou diretório.
+os.path.join(): Junta diferentes componentes de um caminho de arquivo de forma segura, sem se preocupar com a formatação do caminho no sistema operacional (por exemplo, diferenciação entre barras / e \).
+
+import shutil funções:
+
+hutil.copy(src, dst): Copia um arquivo de src para dst. Se dst for um diretório, o arquivo será copiado para dentro dele com o mesmo nome.
+shutil.copy2(src, dst): Semelhante ao copy(), mas também preserva as informações de metadata do arquivo, como data de criação e modificação.
+shutil.copytree(src, dst): Copia um diretório inteiro (com todos os seus arquivos e subdiretórios) de src para dst.
+2. Mover ou renomear arquivos ou diretórios
+shutil.move(src, dst): Move ou renomeia um arquivo ou diretório. Se o destino for um diretório, o arquivo/diretório de origem será movido para lá.
+3. Excluir arquivos ou diretórios
+shutil.rmtree(path): Remove um diretório e todos os seus conteúdos de forma recursiva. (Útil para excluir diretórios não vazios).
+4. Criar arquivos compactados (zip, tar)
+shutil.make_archive(base_name, format, root_dir): Cria um arquivo compactado (zip, tar, etc.) a partir de um diretório.
+shutil.unpack_archive(filename): Extrai arquivos compactados em um diretório.
+5. Mover ou excluir arquivos de forma segura
+shutil.chown(path, user=None, group=None): Altera o dono (usuário) e grupo de um arquivo ou diretório.
+shutil.disk_usage(path): Retorna o uso do disco (espaço total, usado e livre) para o diretório ou caminho especificado.
+
+IMPORT KERAS :
+
+Models
+    Função: Contém funções e classes para a construção e treinamento de modelos.
+    Exemplo de uso:
+    models.Sequential(): Cria um modelo sequencial (onde as camadas são empilhadas linearmente uma após a outra).
+
+layers:
+    Função: Contém várias camadas (layers) usadas para construir redes neurais, como camadas convolucionais, de pooling, densas (fully connected), etc.
+    Exemplo de camadas:
+    layers.Dense(): Cria uma camada totalmente conectada (usada em redes feedforward).
+    layers.Conv2D(): Cria uma camada convolucional (usada em redes neurais convolucionais).
+    layers.MaxPooling2D(): Aplica uma operação de pooling (redução de dimensionalidade).
+    layers.Dropout(): Aplica a técnica de regularização dropout (desativa aleatoriamente uma porcentagem de neurônios).
+
+Activations:
+    Função: Contém funções de ativação usadas nas camadas das redes neurais, como relu, sigmoid, softmax, etc.
+    Exemplo:
+    activations.relu(): Função de ativação ReLU (Rectified Linear Unit), comumente usada em redes neurais profundas.
+    activations.softmax(): Função de ativação Softmax, geralmente usada na camada de saída para problemas de classificação multiclasse.
+    activations.sigmoid(): Função de ativação Sigmoid, frequentemente usada para classificação binária.
+
+optimizers:
+    Função: Contém implementações de otimizadores, que são usados para ajustar os pesos durante o treinamento da rede neural.
+    Exemplo de otimizadores:
+    optimizers.Adam(): Um dos otimizadores mais populares, que combina os melhores recursos do AdaGrad e RMSProp.
+    optimizers.SGD(): Gradiente Estocástico, um otimizador mais simples, mas eficaz em muitos casos.
+    optimizers.RMSprop(): Um otimizador adaptativo que ajusta a taxa de aprendizado com base em médias móveis dos gradientes.
+Losses:
+    Função: Contém funções de perda (loss functions), que são usadas para calcular o erro durante o treinamento e otimizar o modelo.
+    Exemplo de funções de perda:
+    losses.CategoricalCrossentropy(): Função de perda para classificação multiclasse.
+    losses.SparseCategoricalCrossentropy(): Semelhante à CategoricalCrossentropy, mas usada quando as classes são representadas por inteiros em vez de vetores one-hot.
+    losses.MeanSquaredError(): Função de perda para problemas de regressão (erro quadrático médio).
+
+initializers:
+    Função: Contém funções para inicialização dos pesos das camadas da rede neural.
+    Exemplo de inicializadores:
+    initializers.RandomNormal(): Inicializa os pesos com uma distribuição normal.
+    initializers.GlorotUniform(): Inicializa os pesos com uma distribuição uniforme, geralmente usada para redes neurais profundas.
+    initializers.Zeros(): Inicializa os pesos com zero (usado em algumas situações específicas).
+
+metrics:
+    Função: Contém métricas usadas para avaliar a performance do modelo durante o treinamento, como acurácia, precisão, recall, etc.
+    Exemplo de métricas:
+    metrics.Accuracy(): Métrica para calcular a acurácia do modelo.
+    metrics.Precision(): Métrica para calcular a precisão (proporção de positivos corretamente identificados).
+    metrics.Recall(): Métrica para calcular o recall (proporção de positivos identificados corretamente entre todos os positivos reais).
+
+callbacks:
+    Função: Contém funções de callback, que são usadas para realizar ações específicas durante o treinamento (por exemplo, parar o treinamento antes de terminar, salvar o modelo, ajustar a taxa de aprendizado, etc.).
+    Exemplo de callbacks:
+    callbacks.EarlyStopping(): Interrompe o treinamento se a validação não melhorar após um número específico de epochs (evita overfitting).
+    callbacks.ModelCheckpoint(): Salva o modelo durante o treinamento, por exemplo, salvando os melhores pesos baseados na performance da validação.
+
+============================= PROBLEMAS OVERFITING E UNDERFITING ================================
+
+OVERFITING : BEM NO TREINO, MAL NO TESTE
+
+Sinais de Overfitting:
+    Treinamento: A acurácia do treinamento continua subindo enquanto a perda (loss) continua caindo.
+    Validação/Teste: A acurácia do conjunto de validação/teste começa a cair enquanto a perda aumenta.
+
+    COMO RESOLVER:
+
+        Aumentar o conjunto de dados:
+
+        Se possível, adicionar mais dados de treinamento pode ajudar a reduzir o overfitting.
+        Aumento de dados (Data Augmentation): Criar variações de suas imagens (ex: rotações, flips, mudanças de brilho, etc.) para aumentar o número de exemplos sem coletar mais dados reais.
+        Regularização:
+
+        Dropout: Aplique mais dropout. O dropout desativa aleatoriamente algumas conexões durante o treinamento, ajudando a evitar que o modelo dependa de características específicas dos dados de treinamento.
+        Exemplo: layers.Dropout(0.5) (50% de dropout).
+        L2 Regularization (Ridge): Adiciona uma penalização ao valor absoluto dos pesos (isso ajuda a reduzir a complexidade do modelo).
+        Exemplo: layers.Dense(64, kernel_regularizer=tf.keras.regularizers.l2(0.01))
+        Reduzir a Complexidade do Modelo:
+
+        Diminuir o número de camadas ou neurônios: Se o modelo for muito complexo (muitas camadas e neurônios), tente simplificá-lo para evitar que ele "memorize" os dados.
+        Reduzir o número de parâmetros: Diminua a profundidade ou a largura das camadas.
+        Parar o Treinamento Antecipadamente:
+
+        Use o EarlyStopping para interromper o treinamento quando o modelo começar a se desviar do seu melhor desempenho na validação.
+        Exemplo: callbacks.EarlyStopping(monitor='val_loss', patience=10)
+        Ajuste da Taxa de Aprendizado:
+
+        Se a taxa de aprendizado for muito alta, o modelo pode estar ajustando muito rapidamente aos dados de treinamento. Tente reduzir o valor da taxa de aprendizado.
+        Exemplo: optimizer = Adam(learning_rate=0.0001)
+
+UNDERFITING : MAL NO TREINO E NO TESTE
+
+    Sinais de Underfitting:
+
+        Treinamento: Tanto a acurácia do treinamento quanto a acurácia da validação/teste são baixas.
+        Perda (loss): A perda não está diminuindo suficientemente ao longo das épocas.
+
+    O que Ajustar no Modelo:
+
+        Aumentar a Complexidade do Modelo:
+            Adicionar mais camadas ou neurônios: Se o modelo for simples demais, adicione mais camadas densas ou convolucionais, ou aumente o número de neurônios nas camadas.
+            Exemplo: Adicionar uma camada densa com mais neurônios.
+
+        Alterar para um modelo mais complexo: 
+            Se for uma rede neural simples, tente um modelo mais profundo.
+
+        Treinamento por Mais Épocas:
+            Pode ser necessário treinar o modelo por mais épocas. No caso de underfitting, a perda ainda pode estar muito alta no final de um número reduzido de épocas.
+
+        Reduzir o Dropout:
+            Se você estiver usando dropout para regularizar o modelo e o modelo estiver underfitting, tente diminuir a taxa de dropout.
+            Exemplo: layers.Dropout(0.2) (em vez de 0.5, tente 0.2).
+
+        Melhorar o Pré-processamento dos Dados:
+            Feature Engineering: Certifique-se de que os dados estão bem preparados. No caso de imagens, o aumento de dados pode ser útil para melhorar o modelo.
+            Normalização/Padronização: Verifique se os dados de entrada estão bem escalonados (ex: normalização de pixels de imagem para [0, 1]).
+
+        Ajuste da Taxa de Aprendizado:
+            Aumentar a taxa de aprendizado pode ajudar a acelerar o aprendizado, mas cuidado para não deixá-la alta demais, pois pode causar instabilidade no modelo.
+        
+Resumo:
+Overfitting: O modelo está demasiado complexo e "memoriza" os dados de treinamento. Ajustes incluem aumento de dados, regularização (como dropout ou L2), simplificação do modelo e uso de early stopping.
+Underfitting: O modelo está demasiado simples e não aprende adequadamente os dados. Ajustes incluem aumento da complexidade do modelo, aumento do número de épocas e ajustes na regularização.
+
+
+==================== DIFERENÇA DE LOSS E ACCURACY =====================
+
+Loss é mais técnico e quantitativo, pois mostra exatamente o quão erradas estão as previsões em relação aos valores reais.
+Accuracy é uma métrica mais simples e intuitiva que indica a porcentagem de acertos, sendo muito útil para problemas de classificação.
